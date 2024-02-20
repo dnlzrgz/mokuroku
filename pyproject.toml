@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "mokuroku"
+version = "0.1.0"
+description = ""
+authors = ["dnlzrgz <24715931+dnlzrgz@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.2"
+psycopg = "^3.1.18"
+redis = "^5.0.1"
+environs = "^10.3.0"
+django-allauth = "^0.61.1"
+whitenoise = {extras = ["brotli"], version = "^6.6.0"}
+gunicorn = "^21.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.2"
+djhtml = "^3.0.6"
+pre-commit = "^3.6.2"
+commitizen = "^3.15.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
