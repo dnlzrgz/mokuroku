@@ -39,12 +39,6 @@ collect:
 	python manage.py collectstatic
 	@echo "✨ Static files collected!"
 
-# Run tests
-test:
-	@echo "🧪 Running tests..."
-	python manage.py test 
-	@echo "✨ Testing complete!"
-
 # Setup project with dependencies for local development
 setup:
 	poetry install
