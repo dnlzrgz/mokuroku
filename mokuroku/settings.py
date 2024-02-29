@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "taggit",
     # local
     "accounts",
+    "pages",
     "lists",
 ]
 
