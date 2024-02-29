@@ -3,7 +3,7 @@ from django.conf import settings
 from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path(settings.DJANGO_ADMIN_URL, admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("lists/", include("lists.urls")),
     path("", include("pages.urls")),

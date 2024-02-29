@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mokuroku"
-version = "0.0.3"
+version = "0.0.5"
 description = ""
 authors = ["dnlzrgz <24715931+dnlzrgz@users.noreply.github.com>"]
 readme = "README.md"

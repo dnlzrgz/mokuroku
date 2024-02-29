@@ -3,20 +3,33 @@ Django settings for mokuroku project.
 """
 
 from pathlib import Path
+from environs import Env
+
+
+# Environment variables
+# https://github.com/sloria/environs
+env = Env()
+env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=qx)s0^v%26z6+305a)!h7koe*z_!c16mzm14l%5ja)tdig#eq"
+# Keep the secret key used in production secret!
+SECRET_KEY = env.str(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-=qx)s0^v%26z6+305a)!h7koe*z_!c16mzm14l%5ja)tdig#eq",
+)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Don't run with debug turned on in production!
+DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", [])
 
-SITE_ID = 1
+DJANGO_ADMIN_URL = env.str("DJANGO_ADMIN_URL", "admin/")
+
+CANONICAL_URL = env.str("CANONICAL_URL", "")
 
 INTERAL_IPS = [
     "127.0.0.1",
@@ -139,6 +152,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
+
+SITE_ID = 1
 
 USE_I18N = True
 
